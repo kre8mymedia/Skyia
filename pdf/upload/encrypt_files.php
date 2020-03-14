@@ -15,8 +15,12 @@ $options = 0;
 // Set encryption keys
 $encryption_iv = '1234567891011121';
 
+///////      File Type     ////////
+$file_type = 'pdf';
+///////      REPO NAME     ////////
+$repo = 'test_address';
 ///////      PASSWORD     ////////
-$encryption_key = 'ryaneggleston';
+$encryption_key = 'newpassword';
 
 // Set empty STRING'd data array
 $serial_files = [];
@@ -38,7 +42,17 @@ if (count($files) > 1) {
 	// Print some basic details to the console
 	print_r("Files returned: " . count($serial_files) . "\n");
 	echo "File length: " . file_put_contents("./img-data.txt", $serial_files) . "\n";
+	$address_book = file_get_contents("../../address_book.json");
 
+	$new_book = str_replace('}
+}', '},
+ "' . $repo . ".". $file_type .'": {
+   "address": "HAVE NOT FILLED IN NEW ADDRESS FROM UPLOAD.PY",
+   "password": "'. $encryption_key .'"
+  }
+}', $address_book);
+
+file_put_contents("../../address_book.json", $new_book);
 // if count of files was less than 1
 } else {
 	echo "Less than amount\n";

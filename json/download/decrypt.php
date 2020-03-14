@@ -1,9 +1,7 @@
 <?php
 
 $decryption_key = 'ryaneggleston';
-$decryption_iv = "1234567891011121";
-
-$hash = 'AAApx8m4YTApSDgrKP9AJuB5JlRWnSG_SpfxwmDqoFXaRA';
+$hash = 'IACcHdRp44LFFFq9fH2AYrFyaDVBOeko5HofSfNf8Tvi5g';
 
 $url = 'https://siasky.net/' . $hash;
 
@@ -18,6 +16,7 @@ array_pop($encrypt_arr);
 
 $i = 0;
 $ciphering = "AES-128-CTR";
+$decryption_iv = "1234567891011121";
 $options = 0;
 foreach ($encrypt_arr as $key => $encryption) {
  

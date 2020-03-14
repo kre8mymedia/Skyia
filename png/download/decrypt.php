@@ -1,9 +1,9 @@
 <?php
 
-$decryption_key = 'ryaneggleston';
+$decryption_key = 'newpassword';
 $decryption_iv = "1234567891011121";
 
-$hash = '3AFTuKKWGu8v2o8VXhpekWplOW4qkr17kv-fkmse1MSuVQ';
+$hash = '3AHWfGr4p8lufrq5cAyPrHNbn2cPLcrVHZ0qRAlACZ34NQ';
 
 $url = 'https://siasky.net/' . $hash;
 
