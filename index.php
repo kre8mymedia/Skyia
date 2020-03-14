@@ -72,21 +72,22 @@
             require_once('json/download/decrypt.php');
 
             if(!isset($_POST['skyia_address'])) {
-              echo "Enter an address!<br>";
+              echo "<p><b>Enter an address!</b></p><br>";
+              echo null;
             } else {
               $url = $_POST['skyia_address'];
               echo "<p><b>Successfully Pulled Repo Address: </b>" . $url . "</p>";
             }
             
             if(!isset($_POST['password'])) {
-              echo "Enter a password!<br>";
+              echo "<p><b>Enter a password!</b></p><br>";
             } else {
               $decryption_key = $_POST['password'];
               echo "<p><b>Password Used: </b><br>" . $decryption_key . "</p>";
             }
 
             if(!isset($_POST['file_type'])) {
-              echo "Enter a file type!<br>";
+              echo "<p><b>Enter a file type!</b></p><br>";
             } else {
               $file_type = $_POST['file_type'];
               echo "<p><b>File Type Used: </b><br>" . $file_type . "</p>";
