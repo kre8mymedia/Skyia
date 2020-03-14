@@ -18,9 +18,9 @@ $encryption_iv = '1234567891011121';
 ///////      File Type     ////////
 $file_type = 'pdf';
 ///////      REPO NAME     ////////
-$repo = 'test_address';
+$repo = 'job_templates';
 ///////      PASSWORD     ////////
-$encryption_key = 'newpassword';
+$encryption_key = 'oldpassword';
 
 // Set empty STRING'd data array
 $serial_files = [];

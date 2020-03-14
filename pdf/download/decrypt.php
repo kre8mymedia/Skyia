@@ -1,7 +1,7 @@
 <?php
 
-$decryption_key = 'newpassword';
-$hash = '7ADL0pDV9bs_KbUuNVRi8Q0rp2ObbplvNNsG-1e5q4ufBw';
+$decryption_key = 'oldpassword';
+$hash = '7ABIO_i25ASdcoQWh3bLGZFSYMyZthwLFkrA4BXhiTr6Rg';
 
 $url = 'https://siasky.net/' . $hash;
 
