@@ -39,88 +39,35 @@
     <div class="row">
       
       <div class="col-sm-4">
-        <h1>Welcome to Skyia!</h1>
-        <p>What would you like to do?</p>
-
-        <form action="index.php" method="post">
+      <h2>Skyia Address Book</h2>
+      <p>Your locally save addresses.</p>
+        <!-- <form>
           <div class="form-group">
             <label for="exampleInputEmail1">Repo Address</label>
-            <input name="skyia_address" type="url" class="form-control" id="exampleInputUrl" placeholder="https://siasky.net/..." aria-describedby="urlHelp">
-            <small id="urlHelp" class="form-text text-muted">Everything remains on the client.</small>
+            <a onClick="onClick()" href="#box-stuff">Box Fetch</a>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <small id="emailHelp" class="form-text text-muted">Everything remains on the client.</small>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
-            <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" class="form-control" id="exampleInputPassword1">
           </div>
-
-          <div class="form-group">
-            <label for="exampleInputFileType">File Type</label>
-            <input name="file_type" type="text" class="form-control" id="exampleInputFileType">
+          <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
           </div>
-
           <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </form> -->
       </div>
-
       
       <div class="col-sm-8">
         <div class="card border-dark mb-3">
           <div class="card-header">Use window to return PHP output</div>
           <div class="card-body text-dark">
-            <h5 class="card-title">Get Decrypted Files</h5>
+            <h5 class="card-title">Local Addresses</h5>
             <?php 
-            require_once('json/download/decrypt.php');
-
-            if(!isset($_POST['skyia_address'])) {
-              echo "Enter an address!<br>";
-            } else {
-              $url = $_POST['skyia_address'];
-              echo "<p><b>Successfully Pulled Repo Address: </b>" . $url . "</p>";
-            }
-            
-            if(!isset($_POST['password'])) {
-              echo "Enter a password!<br>";
-            } else {
-              $decryption_key = $_POST['password'];
-              echo "<p><b>Password Used: </b><br>" . $decryption_key . "</p>";
-            }
-
-            if(!isset($_POST['file_type'])) {
-              echo "Enter a file type!<br>";
-            } else {
-              $file_type = $_POST['file_type'];
-              echo "<p><b>File Type Used: </b><br>" . $file_type . "</p>";
-            }
-
-            $encryted_str = "";
-            $encrypt_arr = [];
-
-            // Get encrypted string contents
-            if(isset($url)) {
-              $encryted_str = file_get_contents($url);
-
-              // Explode string to an array at commas
-              $encrypt_arr = explode(",", $encryted_str);
-
-              // Remove extra from end (created by last comma)
-              array_pop($encrypt_arr);
-            }
-
-            $i = 0;
-            $ciphering = "AES-128-CTR";
-            $decryption_iv = "1234567891011121";
-            $options = 0;
-            foreach ($encrypt_arr as $key => $encryption) {
-            
-              $decryption = openssl_decrypt($encryption, $ciphering, $decryption_key, $options, $decryption_iv);
-
-              // echo "Decrypted string: " . $decryption . "\n";
-              $file = base64_decode($decryption);
-              $i++;
-              $my_time = time() + $i;
-              echo "<b>". $file_type . "/download/files/". $my_time . "_data." . $file_type . "</b><br>";
-              echo "File String Length: " . file_put_contents($file_type . "/download/files/". $my_time . "_data." . $file_type, $file) . "<br>";
-            }
+            $address_book = file_get_contents('address_book.json');
+            echo "<pre>". $address_book . "</pre>";
             ?>
           </div>
         </div>
