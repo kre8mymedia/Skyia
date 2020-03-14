@@ -15,18 +15,32 @@ $options = 0;
 // Set encryption keys
 $encryption_iv = '1234567891011121';
 
-///////      File Type     ////////
+function generateRandomString($length = 64) {
+	$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	$charactersLength = strlen($characters);
+	$randomString = '';
+	for ($i = 0; $i < $length; $i++) {
+			$randomString .= $characters[rand(0, $charactersLength - 1)];
+	}
+	return $randomString;
+}
+
+// File Type to append to end of argv
 $file_type = 'json';
-///////      REPO NAME     ////////
-$repo = 'Rock_Raspi_Key';
-///////      PASSWORD     ////////
-$encryption_key = 'ryaneggleston';
+// Get repo name from argv
+if(isset($argv[1])) {
+	$repo = $argv[1];
+} else {
+	$repo = "Default_Name";
+}
+// Generate Random 64bit characterString
+$encryption_key = generateRandomString();
 
 // Set empty STRING'd data array
 $serial_files = [];
 
 // if the count is greater than 1
-if (count($files) > 0) {
+if (count($files) > 1) {
 
 	// For each file in files
 	foreach ($files as $key => $file) {
