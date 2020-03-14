@@ -18,7 +18,7 @@ $encryption_iv = '1234567891011121';
 ///////      File Type     ////////
 $file_type = 'json';
 ///////      REPO NAME     ////////
-$repo = 'auto_magic_test';
+$repo = 'Rock_Raspi_Key';
 ///////      PASSWORD     ////////
 $encryption_key = 'ryaneggleston';
 
@@ -26,7 +26,7 @@ $encryption_key = 'ryaneggleston';
 $serial_files = [];
 
 // if the count is greater than 1
-if (count($files) > 1) {
+if (count($files) > 0) {
 
 	// For each file in files
 	foreach ($files as $key => $file) {
