@@ -20,7 +20,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/skyia/local-address-book.php">Local Addresses</a>
           </li>
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               File Types
             </a>
@@ -30,7 +30,7 @@
               <a class="dropdown-item" href="#">PDF</a>
               <a class="dropdown-item" href="#">JSON</a>
             </div>
-          </li>
+          </li> -->
         </ul>
       </div>
     </nav>
