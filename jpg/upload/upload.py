@@ -3,7 +3,7 @@ import json
 
 # upload
 
-skylink = Skynet.UploadFile("img-data.txt")
+skylink = Skynet.upload_file("img-data.txt")
 
 print("Upload successful, skylink: " + skylink.replace("sia://", "https://siasky.net/"))
 
