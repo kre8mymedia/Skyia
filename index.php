@@ -25,7 +25,7 @@
               File Types
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">JPG</a>
+              <a class="dropdown-item" href="/jpg.php">JPG</a>
               <a class="dropdown-item" href="#">PNG</a>
               <a class="dropdown-item" href="#">PDF</a>
               <a class="dropdown-item" href="#">JSON</a>

@@ -40,7 +40,7 @@ $encryption_key = generateRandomString();
 $serial_files = [];
 
 // if the count is greater than 1
-if (count($files) > 1) {
+if (count($files) > 0) {
 
 	// For each file in files
 	foreach ($files as $key => $file) {

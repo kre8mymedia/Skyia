@@ -7,6 +7,7 @@ $files = scandir($dir);
 // Remove unecessaries
 array_shift($files);
 array_shift($files);
+echo $files;
 
 // Set constants
 $ciphering = "AES-128-CTR";
@@ -33,6 +34,14 @@ if(isset($argv[1])) {
 } else {
 	$repo = "Default_Name";
 }
+
+// if(isset($_POST['repo_name'])) {
+// 	$repo = $_POST['repo_name'];
+// 	echo $repo;
+// } else {
+// 	$repo = "Default_Name";
+// }
+
 // Generate Random 64bit characterString
 $encryption_key = generateRandomString();
 
@@ -40,7 +49,7 @@ $encryption_key = generateRandomString();
 $serial_files = [];
 
 // if the count is greater than 1
-if (count($files) > 1) {
+if (count($files) > 0) {
 
 	// For each file in files
 	foreach ($files as $key => $file) {
@@ -68,6 +77,7 @@ if (count($files) > 1) {
 
 file_put_contents("../../address_book.json", $new_book);
 // if count of files was less than 1
+
 } else {
 	echo "Less than amount\n";
 }
